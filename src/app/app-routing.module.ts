@@ -4,6 +4,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 
 const routes: Routes = [
   { path: 'movie-list', component: MovieListComponent },
+
   { path: '', redirectTo: '/movie-list', pathMatch: 'full' },
   { path: '**', redirectTo: '/movie-list', pathMatch: 'full' },
 ];
@@ -12,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
