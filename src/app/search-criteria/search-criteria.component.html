@@ -1,7 +1,9 @@
 <div>
-  <form #searchTitle>
+  <form #searchTitle="ngForm" (ngSubmit)="titleSearch(searchTitle)">
     <label for="title">Title</label>
     <input type="text" name="title" id="title" ngModel />
+    <button>Submit</button>
   </form>
-  <form></form>
+  <!-- <form></form> -->
+
 </div>

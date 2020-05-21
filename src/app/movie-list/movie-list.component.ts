@@ -8,15 +8,16 @@ import { MovieService } from '../movie.service';
 })
 export class MovieListComponent implements OnInit {
   data: any;
-  constructor(private service: MovieService) {}
+  constructor(private service: MovieService) { }
 
   ngOnInit(): void {
     this.getData();
   }
   getData(): void {
     this.service.getData().subscribe((response) => {
-      console.log(response);
+      // console.log(response);
       this.data = response;
     });
   }
+  // setData()
 }
