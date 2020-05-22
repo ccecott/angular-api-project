@@ -10,6 +10,9 @@ export class MovieService {
     'https://api.themoviedb.org/3/movie/popular';
   apiTitle: string =
     'https://api.themoviedb.org/3/search/movie';
+
+  apiDiscover: string =
+    "https://api.themoviedb.org/3/discover/movie"
   constructor(private http: HttpClient) { }
   // popular movies
   getData() {
@@ -28,5 +31,14 @@ export class MovieService {
         api_key: this.apiKey
       }
     });
+  }
+  getGenre(genre_ids:any){
+    return this.http.get(this.apiDiscover,{
+      params: {
+        api_key: this.apiKey,
+        with_genres: genre_ids
+      }
+    })
+
   }
 }

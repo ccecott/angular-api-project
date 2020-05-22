@@ -29,12 +29,16 @@ export class SearchCriteriaComponent implements OnInit {
       }
 
     });
-
-  }
+    }
   titleSearch(form: NgForm) {
     this.router.navigate(["home"], {
       queryParams: { myTitle: form.value.title }
 
     });
+  }
+  genreDrop(form: NgForm){
+    this.router.navigate(["home"],{
+      queryParams: {genre_ids: form.value.option }
+    })
   }
 }
