@@ -17,14 +17,22 @@ export class SearchCriteriaComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
-      this.service.getTitle(response.results).subscribe((data) => {
-        this.data = data;
-      });
+      if (!response.myTitle) {
+        // if not provided a keyword then use my method from my service (getData)
+        this.service.getData().subscribe((response) => {
+          this.data = response;
+        });
+      } else {
+        this.service.getTitle(response.myTitle).subscribe((data) => {
+          this.data = data;
+        });
+      }
+
     });
 
   }
   titleSearch(form: NgForm) {
-    this.router.navigate(["movie-list"], {
+    this.router.navigate(["home"], {
       queryParams: { myTitle: form.value.title }
 
     });
