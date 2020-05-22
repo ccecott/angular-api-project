@@ -4,20 +4,27 @@
     <input type="text" name="title" id="title" ngModel />
     <button>Submit</button>
   </form>
-  
-  <form #discoverForm="ngForm" (ngSubmit)="genreDrop(discoverForm)">
+
+  <form
+    #discoverForm="ngForm"
+    (ngSubmit)="genreDrop(discoverForm)"
+    (ngSubmit)="yearInput(discoverForm)"
+  >
     <label for="rating">Rating</label>
-    <input type="text" name="rating" id="rating" ngModel>
+    <input type="text" name="rating" id="rating" ngModel />
     <label for="year">Year</label>
-    <input type="text" name="year" id="year" ngModel>
+    <input type="text" name="year" id="year" ngModel />
 
     <select name="genre" id="genre" ngModel>
       <option value="" selected>Genre</option>
-      <option value="35">Action</option>
+      <option value="28">Action</option>
+      <option value="35">Comedy</option>
+      <option value="27">Horror</option>
+      <option value="18">Drama</option>
+      <option value="878">Sci-Fi</option>
     </select>
     <button>Enter</button>
   </form>
 
   <app-movie-list [data]="data"></app-movie-list>
-
 </div>
