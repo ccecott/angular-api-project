@@ -5,23 +5,16 @@
     <button>Submit</button>
   </form>
 
-  <form
-    #discoverForm="ngForm"
-    (ngSubmit)="genreDrop(discoverForm)"
-    (ngSubmit)="yearInput(discoverForm)"
-  >
+  <form #discoverForm="ngForm" (ngSubmit)="filterSearch(discoverForm)">
     <label for="rating">Rating</label>
     <input type="text" name="rating" id="rating" ngModel />
     <label for="year">Year</label>
     <input type="text" name="year" id="year" ngModel />
 
     <select name="genre" id="genre" ngModel>
-      <option value="" selected>Genre</option>
-      <option value="28">Action</option>
-      <option value="35">Comedy</option>
-      <option value="27">Horror</option>
-      <option value="18">Drama</option>
-      <option value="878">Sci-Fi</option>
+
+      <option value="{{genre.id}}" *ngFor="let genre of genres">{{ genre.name }}</option>
+
     </select>
     <button>Enter</button>
   </form>
