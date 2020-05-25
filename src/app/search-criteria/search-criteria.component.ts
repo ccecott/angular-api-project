@@ -9,40 +9,41 @@ import { from } from 'rxjs';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
+  favoritesArray: object[];
   data: any;
   genres: any;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private service: MovieService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
-      console.log(response)
+      console.log(response);
       if (response.myTitle) {
-        console.log("up");
+        console.log(response);
         this.service.getTitle(response.myTitle).subscribe((data) => {
           this.data = data;
         });
       } else if (response.genre || response.year || response.rating) {
-        console.log("heool");
-        this.service.filterMovies(response.year, response.genre).subscribe((response) => {
-          this.data = response;
-        })
+        console.log('heool');
+        this.service
+          .filterMovies(response.year, response.genre, response.rating)
+          .subscribe((response) => {
+            this.data = response;
+          });
       } else {
-        console.log("down");
+        console.log('down');
         // if not provided a keyword then use my method from my service (getData)
         this.service.getData().subscribe((response) => {
           this.data = response;
         });
-
       }
     });
 
     this.service.getGenres().subscribe((response) => {
-
-      this.genres = response["genres"];
+      this.genres = response.genres;
     });
   }
   titleSearch(form: NgForm) {
@@ -52,22 +53,16 @@ export class SearchCriteriaComponent implements OnInit {
   }
   filterSearch(form: NgForm) {
     console.log(form.value);
-    this.router.navigate(["home"], {
+    this.router.navigate(['home'], {
       queryParams: {
         year: form.value.year,
         genre: form.value.genre,
-        rating: form.value.rating
-      }
-    })
+        rating: form.value.rating,
+      },
+    });
   }
-  // genreDrop(form: NgForm) {
-  //   this.router.navigate(['home'], {
-  //     queryParams: { genre_ids: form.value.genre },
-  //   });
-  // }
-  // yearInput(form: NgForm) {
-  //   this.router.navigate(['home'], {
-  //     queryParams: { date: form.value.year },
-  //   });
-  // }
+  pushFavorite() {
+    //how do we pull in movie info to push
+    this.favoritesArray.push();
+  }
 }
