@@ -1,13 +1,17 @@
-<div>
-
-</div>
+<div></div>
 <div>
   <ul>
     <li *ngFor="let movie of data?.results">
       <p>{{ movie.title }}</p>
-      <img width="150" height="225" src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
+      <img
+        width="150"
+        height="225"
+        src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
           movie.poster_path
-        }}" />
+        }}"
+      />
+      <button>X</button>
+      <!-- (click)="addFavorite()" -->
     </li>
   </ul>
 </div>

@@ -10,7 +10,8 @@ export class MovieService {
   apiTitle: string = 'https://api.themoviedb.org/3/search/movie';
   apiGenres: string = 'https://api.themoviedb.org/3/genre/movie/list';
   apiDiscover: string = 'https://api.themoviedb.org/3/discover/movie';
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {}
   // popular movies
   getData() {
     return this.http.get(this.apiHomeUrl, {
@@ -29,20 +30,21 @@ export class MovieService {
       },
     });
   }
-  getGenres() {
+  getGenres(): any {
     return this.http.get(this.apiGenres, {
       params: {
         api_key: this.apiKey,
       },
     });
   }
-  filterMovies(release: any, genre: any) {
-    console.log("heard");
+  filterMovies(release: any, genre: any, rating: any) {
+    console.log('heard');
     return this.http.get(this.apiDiscover, {
       params: {
         api_key: this.apiKey,
         primary_release_year: release,
         with_genres: genre,
+        vote_average: rating,
       },
     });
   }
