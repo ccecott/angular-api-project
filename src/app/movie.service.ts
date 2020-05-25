@@ -11,7 +11,7 @@ export class MovieService {
   apiGenres: string = 'https://api.themoviedb.org/3/genre/movie/list';
   apiDiscover: string = 'https://api.themoviedb.org/3/discover/movie';
   favoritesArray: any = [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   // popular movies
   getData() {
     return this.http.get(this.apiHomeUrl, {
@@ -55,4 +55,9 @@ export class MovieService {
   getFavorites() {
     return this.favoritesArray;
   }
+  spliceFav(index: any): any {
+    return this.favoritesArray.splice(index, 1)
+  }
+
 }
+

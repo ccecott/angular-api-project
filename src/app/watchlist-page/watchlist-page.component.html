@@ -1,13 +1,10 @@
 <ul>
-  <li *ngFor="let movie of favoriteMovies">
+  <li *ngFor="let movie of favoriteMovies;index as i">
     <p>{{ movie.title }}</p>
-    <img
-      width="150"
-      height="225"
-      src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
+    <img width="150" height="225" src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
         movie.poster_path
-      }}"
-    />
-    <button>X</button>
+      }}" />
+    <button (click)="deleteFav(i)">O</button>
+
   </li>
 </ul>
