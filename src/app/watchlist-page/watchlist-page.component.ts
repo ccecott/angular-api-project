@@ -9,13 +9,16 @@ import { MovieService } from '../movie.service';
 })
 export class WatchlistPageComponent implements OnInit {
   // @Input() data: any;
+  favoriteMovies: any = [];
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private service: MovieService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.favoriteMovies = this.service.getFavorites();
+  }
   // favoritesRoute() {
   //   this.router.navigate(['watch']);
   // }

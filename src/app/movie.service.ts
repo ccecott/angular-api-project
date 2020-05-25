@@ -10,7 +10,7 @@ export class MovieService {
   apiTitle: string = 'https://api.themoviedb.org/3/search/movie';
   apiGenres: string = 'https://api.themoviedb.org/3/genre/movie/list';
   apiDiscover: string = 'https://api.themoviedb.org/3/discover/movie';
-
+  favoritesArray: any = [];
   constructor(private http: HttpClient) {}
   // popular movies
   getData() {
@@ -47,5 +47,12 @@ export class MovieService {
         vote_average: rating,
       },
     });
+  }
+  pushFavorite(movie: any) {
+    this.favoritesArray.push(movie);
+    console.log(this.favoritesArray);
+  }
+  getFavorites() {
+    return this.favoritesArray;
   }
 }
