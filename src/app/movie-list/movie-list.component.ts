@@ -9,11 +9,15 @@ import { MovieService } from '../movie.service';
 export class MovieListComponent implements OnInit {
   @Input() data: any;
   // @Output() added = new EventEmitter<void>();
-  constructor(private service: MovieService) {}
+  show: boolean = false
+  constructor(private service: MovieService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   addFavorite(movie: any) {
     this.service.pushFavorite(movie);
+  }
+  toggleOverview(): void {
+    this.show = !this.show
   }
 }

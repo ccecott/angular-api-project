@@ -10,11 +10,12 @@ import { MovieService } from '../movie.service';
 export class WatchlistPageComponent implements OnInit {
   // @Input() data: any;
   favoriteMovies: any = [];
+  
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private service: MovieService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.favoriteMovies = this.service.getFavorites();
@@ -22,4 +23,7 @@ export class WatchlistPageComponent implements OnInit {
   // favoritesRoute() {
   //   this.router.navigate(['watch']);
   // }
+  deleteFav(index: number) {
+    this.service.spliceFav(index);
+  }
 }

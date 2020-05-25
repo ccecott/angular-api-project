@@ -16,7 +16,7 @@ export class SearchCriteriaComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private service: MovieService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
