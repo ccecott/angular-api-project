@@ -1,1 +1,13 @@
-<p>watchlist-page</p>
+<ul>
+  <li *ngFor="let movie of favoriteMovies">
+    <p>{{ movie.title }}</p>
+    <img
+      width="150"
+      height="225"
+      src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
+        movie.poster_path
+      }}"
+    />
+    <button>X</button>
+  </li>
+</ul>
