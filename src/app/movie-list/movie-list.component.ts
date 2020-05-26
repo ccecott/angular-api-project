@@ -21,6 +21,11 @@ export class MovieListComponent implements OnInit {
 
   // add more functionality here, set -1 to showIndex 
   toggleOverview(index: number): any {
-    this.showIndex = index;
+    // this.showIndex = index;
+    if (this.showIndex >= index) {
+      this.showIndex = -1;
+    } else {
+      this.showIndex = index;
+    }
   }
 }
