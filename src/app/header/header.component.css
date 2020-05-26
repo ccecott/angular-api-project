@@ -1,0 +1,28 @@
+.header {
+    background-color: aqua;
+    
+}
+
+.title-div {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    margin: 0px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.tab {
+    list-style: none;
+   
+}
+
+.tab-link {
+    text-decoration: none;
+}

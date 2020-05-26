@@ -10,7 +10,7 @@ import { MovieService } from '../movie.service';
 export class WatchlistPageComponent implements OnInit {
   // @Input() data: any;
   favoriteMovies: any = [];
-  
+  show: boolean = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -25,5 +25,8 @@ export class WatchlistPageComponent implements OnInit {
   // }
   deleteFav(index: number) {
     this.service.spliceFav(index);
+  }
+  toggleOverview(): any {
+    this.show = !this.show
   }
 }
