@@ -4,6 +4,33 @@
     font: inherit;
     color: inherit;
     background-color: transparent;
+cursor: pointer;
+}
+.fa-heart{
+    color: rgb(240, 142, 171);
+    font-size: 25px;
+    position:absolute;
+    top: 5px;
+    right: 5px;
     
-    cursor: pointer;
+}
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+}
+.movie-poster{
+    position: relative;
+    padding: 30px;
+    flex: 1;
+}
+.movie-img{
+    border-radius: 10px;
+}
+.movie-title{
+    text-align: center;
+}
+.movie-overview{
+    flex: 1;
 }
