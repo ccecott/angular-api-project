@@ -1,28 +1,38 @@
 .header {
-    background-color: aqua;
-    
+  background-color: aqua;
+  background-image: url(../assests/drive-in.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 .title-div {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
-    margin: 0px;
+  margin: 0px;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .tab {
-    list-style: none;
-   
+  list-style: none;
 }
 
 .tab-link {
-    text-decoration: none;
+  text-decoration: none;
+}
+.fa-heart {
+  color: red;
+}
+.fa-home {
+  color: black;
 }
