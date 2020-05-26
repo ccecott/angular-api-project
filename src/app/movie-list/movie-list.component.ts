@@ -8,8 +8,9 @@ import { MovieService } from '../movie.service';
 })
 export class MovieListComponent implements OnInit {
   @Input() data: any;
+  showIndex: number = -1;
   // @Output() added = new EventEmitter<void>();
-  show: boolean = false
+
   constructor(private service: MovieService) { }
 
   ngOnInit(): void { }
@@ -17,7 +18,9 @@ export class MovieListComponent implements OnInit {
   addFavorite(movie: any) {
     this.service.pushFavorite(movie);
   }
-  toggleOverview(): void {
-    this.show = !this.show
+
+  // add more functionality here, set -1 to showIndex 
+  toggleOverview(index: number): any {
+    this.showIndex = index;
   }
 }
