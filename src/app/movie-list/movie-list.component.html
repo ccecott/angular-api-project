@@ -8,7 +8,7 @@
           movie.poster_path
         }}" />
       <p *ngIf="showIndex === i">{{movie.overview}}</p>
-      <button (click)="addFavorite(movie)">+</button>
+      <button class="add-heart" (click)="addFavorite(movie)"><i class="fas fa-heart"></i></button>
     </li>
   </ul>
 </div>
