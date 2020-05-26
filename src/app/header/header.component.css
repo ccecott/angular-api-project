@@ -15,13 +15,20 @@
 
 .title {
   margin: 0px;
+  color: rgb(237, 82, 82);
+  font-weight: bolder;
+  -webkit-text-stroke-width: medium;
+  -webkit-text-stroke-color: black;
+padding-bottom: 10px;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 0;
+  padding: 2px 5px 0 5px;
+  margin: 0;
 }
+
 
 .tab {
   list-style: none;
@@ -31,8 +38,12 @@
   text-decoration: none;
 }
 .fa-heart {
-  color: red;
+  color: rgb(240, 142, 171);
+font-size: 25px;
+padding: 8px;
 }
 .fa-home {
-  color: black;
+  color: rgb(255, 235, 137);
+  font-size: 25px;
+padding: 8px;
 }

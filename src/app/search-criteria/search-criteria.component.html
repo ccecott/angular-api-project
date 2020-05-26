@@ -1,23 +1,24 @@
-<div>
-  <form #searchTitle="ngForm" (ngSubmit)="titleSearch(searchTitle)">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" ngModel />
-    <button>Submit</button>
+<div class="forms-parent">
+  <h2 class="filter-header">Filter Movies</h2>
+  <form class="title-form" #searchTitle="ngForm" (ngSubmit)="titleSearch(searchTitle)">
+    <label class="title label" for="title">Title</label>
+    <input class="input" type="text" name="title" id="title" ngModel />
+    <button class="form-button">Submit</button>
   </form>
 
-  <form #discoverForm="ngForm" (ngSubmit)="filterSearch(discoverForm)">
-    <label for="rating">Rating</label>
-    <input type="text" name="rating" id="rating" ngModel />
-    <label for="year">Year</label>
-    <input type="text" name="year" id="year" ngModel />
+  <form class="multi-form" #discoverForm="ngForm" (ngSubmit)="filterSearch(discoverForm)">
+    <label class="label" for="rating">Rating</label>
+    <input class="input" type="text" name="rating" id="rating" ngModel />
+    <label class="label" for="year">Year</label>
+    <input class="input" type="text" name="year" id="year" ngModel />
 
-    <select name="genre" id="genre" ngModel>
+    <select class="select" name="genre" id="genre" ngModel>
+      <option value="">Select Genres</option>
       <option value="{{ genre.id }}" *ngFor="let genre of genres">{{
         genre.name
       }}</option>
     </select>
-    <button>Enter</button>
+    <button class="form-button">Submit</button>
   </form>
-
-  <app-movie-list [data]="data"></app-movie-list>
 </div>
+<app-movie-list [data]="data"></app-movie-list>

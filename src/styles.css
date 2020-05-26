@@ -3,3 +3,6 @@ body {
   margin: 0 auto;
   font-family: "Baloo Thambi 2", cursive;
 }
+ul{
+  list-style: none;
+}
