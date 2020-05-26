@@ -7,7 +7,10 @@
       <img class="movie-img" (click)="toggleOverview(i)" width="150" height="225" src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
           movie.poster_path
         }}" />
-      <div class="movie-overview" *ngIf="showIndex === i">{{movie.overview}}</div>
+      <div class="movie-overview" *ngIf="showIndex === i">
+        <p class="para-overview">{{movie.overview}}</p>
+        <button class="close-button" (click)="toggleOverview(i)">Close</button>
+      </div>
       <button class="add-heart" (click)="addFavorite(movie)"><i class="fas fa-heart"></i></button>
     </li>
   </ul>

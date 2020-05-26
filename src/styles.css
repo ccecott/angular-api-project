@@ -2,7 +2,20 @@
 body {
   margin: 0 auto;
   font-family: "Baloo Thambi 2", cursive;
+  background-image: url(src/app/assests/star-sky.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 ul{
   list-style: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+outline: none;
 }

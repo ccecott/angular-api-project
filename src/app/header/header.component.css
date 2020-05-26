@@ -16,6 +16,7 @@
 .title {
   margin: 0px;
   color: rgb(237, 82, 82);
+  font-size: 60px;
   font-weight: bolder;
   -webkit-text-stroke-width: medium;
   -webkit-text-stroke-color: black;
