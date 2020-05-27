@@ -12,7 +12,7 @@ export class MovieService {
   apiDiscover: string = 'https://api.themoviedb.org/3/discover/movie';
   favoritesArray: any = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   // popular movies
   getData() {
     return this.http.get(this.apiHomeUrl, {
@@ -51,16 +51,13 @@ export class MovieService {
   }
   pushFavorite(movie: any) {
     this.favoritesArray.push(movie);
-    console.log(this.favoritesArray);
+    console.log(this.favoritesArray[0].id);
+    console.log(movie);
   }
   getFavorites() {
     return this.favoritesArray;
   }
   spliceFav(index: any): any {
-    return this.favoritesArray.splice(index, 1)
+    return this.favoritesArray.splice(index, 1);
   }
-
-
-
 }
-

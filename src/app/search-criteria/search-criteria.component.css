@@ -1,63 +1,102 @@
-.forms-parent{
-    display: flex;
-    flex-direction: column;
-    border: 8px solid black;
-    border-radius: 10px;
-    padding: 6px;
-    margin: 20px;
-    background-color: rgb(245, 154, 80);
+.forms-parent {
+  display: flex;
+  flex-direction: column;
+  border: 8px solid black;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 20px;
+  background-color: rgb(245, 154, 80);
 }
-.filter-header{
-    text-align: center;
-    margin: 0 0 15px 0;
-    color: black;
+.filter-header {
+  text-align: center;
+  margin: 0 0 15px 0;
+  color: black;
 }
-.title-form{
-    
-    display: flex;
-    flex-direction: column;
-    /* max-width: 100%; */
-    text-align: center;
-    align-items: center;
-    border: 5px solid black;
-    margin-bottom: 4px;
-    padding-bottom: 8px;
-    border-radius: 10px;
-    background-color: rgb(148, 121, 173);
+.title-form {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 100%; */
+  text-align: center;
+  align-items: center;
+  border: 5px solid black;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-radius: 10px;
+  background-color: rgb(148, 121, 173);
 }
-.multi-form{
-    display: flex;
-    flex-direction: column;
-    /* max-width: 100%; */
-    text-align: center;
-    align-items: center;
-    padding-bottom: 8px;
-    border: 5px solid black;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    background-color: rgb(255, 235, 137);
-    
+.multi-form {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 100%; */
+  text-align: center;
+  align-items: center;
+  padding-bottom: 8px;
+  border: 5px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 235, 137);
 }
 
-.label{
-    padding-bottom: 8px;
-    font-size: 1.2em;
+.label {
+  padding-bottom: 8px;
+  font-size: 1.2em;
 }
-.input{
-    width: 300px;
-    border-radius: 10px;
-    text-align: center;
-    border-style: none;
+.input {
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  border-style: none;
 }
-.select{
-    width:200px;
-    margin-top:15px;
-    border-style: none;
+.select {
+  width: 200px;
+  margin-top: 15px;
+  border-style: none;
+  border-radius: 5px;
+  font-family: "Baloo Thambi 2";
 }
-.form-button{
-    margin-top: 6px;
-    background-color: rgb(130, 198, 214);
-    border-radius: 10px;
-    padding: 6px;
-    border-style: none;
+.form-button {
+  margin-top: 6px;
+  background-color: rgb(130, 198, 214);
+  border-radius: 10px;
+  padding: 5px;
+  border-style: none;
+  font-family: "Baloo Thambi 2";
+}
+
+@media only screen and (min-width: 768px) {
+  /* .title-form {
+    max-width: 80%;
+  }
+  .multi-form {
+    max-width: 80%;
+  } */
+  .media-div {
+    display: flex;
+    justify-content: center;
+  }
+  .forms-parent {
+    width: 600px;
+  }
+  .input {
+    height: 25px;
+    width: 500px;
+  }
+  .label {
+    font-size: 2em;
+  }
+  .filter-header {
+    font-size: 2.5em;
+  }
+  .form-button {
+    height: 30px;
+    width: 80px;
+    font-size: large;
+    font-family: "Baloo Thambi 2";
+    padding: 3px;
+  }
+  .select {
+    height: 30px;
+    border-radius: 5px;
+    font-family: "Baloo Thambi 2";
+  }
 }

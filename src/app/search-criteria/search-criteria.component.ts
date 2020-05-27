@@ -16,7 +16,7 @@ export class SearchCriteriaComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private service: MovieService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
@@ -60,9 +60,5 @@ export class SearchCriteriaComponent implements OnInit {
         rating: form.value.rating,
       },
     });
-  }
-  pushFavorite() {
-    //how do we pull in movie info to push
-    this.favoritesArray.push();
   }
 }

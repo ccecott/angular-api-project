@@ -9,17 +9,24 @@ import { MovieService } from '../movie.service';
 export class MovieListComponent implements OnInit {
   @Input() data: any;
   showIndex: number = -1;
+  movieID: number;
   // @Output() added = new EventEmitter<void>();
 
-  constructor(private service: MovieService) { }
+  constructor(private service: MovieService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   addFavorite(movie: any) {
     this.service.pushFavorite(movie);
+    if (movie.id === this.movieID) {
+      console.log('no');
+    } else {
+      // console.log(movie.id);
+      console.log();
+    }
   }
 
-  // add more functionality here, set -1 to showIndex 
+  // add more functionality here, set -1 to showIndex
   toggleOverview(index: number): any {
     // this.showIndex = index;
     if (this.showIndex >= index) {
