@@ -1,24 +1,36 @@
-<div class="forms-parent">
-  <h2 class="filter-header">Filter Movies</h2>
-  <form class="title-form" #searchTitle="ngForm" (ngSubmit)="titleSearch(searchTitle)">
-    <label class="title label" for="title">Title</label>
-    <input class="input" type="text" name="title" id="title" ngModel />
-    <button class="form-button">Submit</button>
-  </form>
+<div class="media-div">
+  <div class="forms-parent">
+    <h2 class="filter-header">Filter Movies</h2>
+    <form
+      class="title-form"
+      #searchTitle="ngForm"
+      (ngSubmit)="titleSearch(searchTitle)"
+    >
+      <label class="title label" for="title">Title</label>
+      <input class="input" type="text" name="title" id="title" ngModel />
+      <button class="form-button">Submit</button>
+    </form>
 
-  <form class="multi-form" #discoverForm="ngForm" (ngSubmit)="filterSearch(discoverForm)">
-    <label class="label" for="rating">Rating</label>
-    <input class="input" type="text" name="rating" id="rating" ngModel />
-    <label class="label" for="year">Year</label>
-    <input class="input" type="text" name="year" id="year" ngModel />
+    <form
+      class="multi-form"
+      #discoverForm="ngForm"
+      (ngSubmit)="filterSearch(discoverForm)"
+    >
+      <label class="label" for="rating">Rating</label>
+      <input class="input" type="text" name="rating" id="rating" ngModel />
+      <label class="label" for="year">Year</label>
+      <input class="input" type="text" name="year" id="year" ngModel />
 
-    <select class="select" name="genre" id="genre" ngModel>
-      <option value="">Select Genres</option>
-      <option value="{{ genre.id }}" *ngFor="let genre of genres">{{
-        genre.name
-      }}</option>
-    </select>
-    <button class="form-button">Submit</button>
-  </form>
+      <select class="select" name="genre" id="genre" ngModel>
+        <option value="">Select Genres</option>
+        <option value="{{ genre.id }}" *ngFor="let genre of genres">{{
+          genre.name
+        }}</option>
+      </select>
+      <button class="form-button">Submit</button>
+    </form>
+  </div>
 </div>
-<app-movie-list [data]="data"></app-movie-list>
+<div>
+  <app-movie-list [data]="data"></app-movie-list>
+</div>

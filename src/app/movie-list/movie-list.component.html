@@ -1,17 +1,24 @@
-<div>
+<div class="movie-div">
   <ul class="movie-list">
-    <li class="movie-poster" *ngFor="let movie of data?.results;index as i">
+    <li class="movie-poster" *ngFor="let movie of data?.results; index as i">
       <p class="movie-title">{{ movie.title }}</p>
 
-
-      <img class="movie-img" (click)="toggleOverview(i)" width="150" height="225" src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
+      <img
+        class="movie-img"
+        (click)="toggleOverview(i)"
+        width="150"
+        height="225"
+        src="https://image.tmdb.org/t/p/w440_and_h660_face/{{
           movie.poster_path
-        }}" />
+        }}"
+      />
       <div class="movie-overview" *ngIf="showIndex === i">
-        <p class="para-overview">{{movie.overview}}</p>
+        <p class="para-overview">{{ movie.overview }}</p>
         <button class="close-button" (click)="toggleOverview(i)">Close</button>
       </div>
-      <button class="add-heart" (click)="addFavorite(movie)"><i class="fas fa-heart"></i></button>
+      <button class="add-heart" (click)="addFavorite(movie)">
+        <i class="fas fa-heart"></i>
+      </button>
     </li>
   </ul>
 </div>
