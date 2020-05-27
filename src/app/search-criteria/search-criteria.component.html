@@ -32,5 +32,5 @@
   </div>
 </div>
 <div>
-  <app-movie-list [data]="data"></app-movie-list>
+  <app-movie-list [data]="data" (added)="addFavorite($event)"></app-movie-list>
 </div>

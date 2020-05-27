@@ -64,6 +64,9 @@
   padding: 7px;
   border-radius: 3px;
 }
+.favorite {
+  color: black;
+}
 @media only screen and (min-width: 768px) {
   /* .movie-div {
     display: flex;

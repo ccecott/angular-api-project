@@ -1,6 +1,6 @@
 <div class="movie-div">
   <ul class="movie-list">
-    <li class="movie-poster" *ngFor="let movie of data?.results; index as i">
+    <li class="movie-poster" *ngFor="let movie of data; index as i">
       <p class="movie-title">{{ movie.title }}</p>
 
       <img
@@ -16,8 +16,12 @@
         <p class="para-overview">{{ movie.overview }}</p>
         <button class="close-button" (click)="toggleOverview(i)">Close</button>
       </div>
-      <button class="add-heart" (click)="addFavorite(movie)">
-        <i class="fas fa-heart"></i>
+      <button class="add-heart">
+        <i
+          class="fas fa-heart"
+          (click)="addFavorite(movie)"
+          [ngClass]="{ favorite: movie.isClicked }"
+        ></i>
       </button>
     </li>
   </ul>

@@ -9,8 +9,9 @@ import { from } from 'rxjs';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
-  favoritesArray: object[];
-  data: any;
+  favoriteMovies: any = [];
+  // favoritesArray: object[];
+  data: any = [];
   genres: any;
   constructor(
     private router: Router,
@@ -19,25 +20,25 @@ export class SearchCriteriaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.favoriteMovies = this.service.getFavorites();
     this.route.queryParams.subscribe((response) => {
-      console.log(response);
       if (response.myTitle) {
-        console.log(response);
         this.service.getTitle(response.myTitle).subscribe((data) => {
-          this.data = data;
+          this.data = data.results;
+          this.addProperty();
         });
       } else if (response.genre || response.year || response.rating) {
-        console.log('heool');
         this.service
           .filterMovies(response.year, response.genre, response.rating)
           .subscribe((response) => {
-            this.data = response;
+            this.data = response.results;
+            this.addProperty();
           });
       } else {
-        console.log('down');
         // if not provided a keyword then use my method from my service (getData)
         this.service.getData().subscribe((response) => {
-          this.data = response;
+          this.data = response.results;
+          this.addProperty();
         });
       }
     });
@@ -60,5 +61,27 @@ export class SearchCriteriaComponent implements OnInit {
         rating: form.value.rating,
       },
     });
+  }
+  addProperty(): void {
+    this.data.forEach((movie) => {
+      if (this.checkDuplicate(movie)) {
+        movie.isClicked = true;
+      }
+    });
+  }
+  checkDuplicate(movie: any): boolean {
+    return this.favoriteMovies.some((item) => {
+      return item.id === movie.id;
+    });
+  }
+
+  addFavorite(movie: any) {
+    if (this.checkDuplicate(movie)) {
+      console.log('i need to remove');
+    } else {
+      movie.isClicked = true;
+      console.log(movie);
+      this.service.pushFavorite(movie);
+    }
   }
 }

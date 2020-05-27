@@ -14,7 +14,7 @@ export class MovieService {
 
   constructor(private http: HttpClient) {}
   // popular movies
-  getData() {
+  getData(): any {
     return this.http.get(this.apiHomeUrl, {
       params: {
         api_key: this.apiKey,
@@ -23,7 +23,7 @@ export class MovieService {
     });
   }
   // keyword
-  getTitle(myTitle: string) {
+  getTitle(myTitle: string): any {
     return this.http.get(this.apiTitle, {
       params: {
         query: myTitle,
@@ -38,7 +38,7 @@ export class MovieService {
       },
     });
   }
-  filterMovies(release: any, genre: any, rating: any) {
+  filterMovies(release: any, genre: any, rating: any): any {
     console.log('heard');
     return this.http.get(this.apiDiscover, {
       params: {
@@ -50,9 +50,19 @@ export class MovieService {
     });
   }
   pushFavorite(movie: any) {
-    this.favoritesArray.push(movie);
-    console.log(this.favoritesArray[0].id);
-    console.log(movie);
+    //tracks wheter movie has been found in the array
+    let foundMovie = false;
+    //check if this movie already exists in the array
+    this.favoritesArray.forEach((favorite) => {
+      if (favorite.id === movie.id) {
+        foundMovie = true;
+      }
+    });
+    if (foundMovie === false) {
+      this.favoritesArray.push(movie);
+    } else {
+      console.log('movie is already in favorites');
+    }
   }
   getFavorites() {
     return this.favoritesArray;
