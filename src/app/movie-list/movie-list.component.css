@@ -8,7 +8,7 @@
   position: absolute;
 }
 .fa-heart {
-  color: rgb(240, 142, 171);
+  color: rgb(167, 13, 13);
   font-size: 25px;
 
   top: 5px;
@@ -31,6 +31,7 @@
   border-radius: 10px;
   cursor: pointer;
   z-index: 0;
+  padding-left: 20px;
 }
 .movie-title {
   text-align: center;

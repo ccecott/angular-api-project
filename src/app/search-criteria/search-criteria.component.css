@@ -5,7 +5,7 @@
   border-radius: 10px;
   padding: 6px;
   margin: 20px;
-  background-color: rgb(245, 154, 80);
+  background-color: rgb(253, 143, 0);
 }
 .filter-header {
   text-align: center;
@@ -22,7 +22,7 @@
   margin-bottom: 4px;
   padding-bottom: 8px;
   border-radius: 10px;
-  background-color: rgb(148, 121, 173);
+  background-color: rgb(24, 24, 24);
 }
 .multi-form {
   display: flex;
@@ -34,12 +34,13 @@
   border: 5px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: rgb(255, 235, 137);
+  background-color: rgb(24, 24, 24);
 }
 
 .label {
   padding-bottom: 8px;
   font-size: 1.2em;
+  color: rgb(219, 219, 219);
 }
 .input {
   width: 300px;
@@ -56,7 +57,7 @@
 }
 .form-button {
   margin-top: 6px;
-  background-color: rgb(130, 198, 214);
+  background-color: rgb(107, 122, 156);
   border-radius: 10px;
   padding: 5px;
   border-style: none;

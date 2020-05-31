@@ -1,31 +1,38 @@
 .header {
   background-color: aqua;
-  background-image: url(../assests/bleak.jpg);
-  -webkit-background-size: cover;
+  background-image: linear-gradient(rgb(0,0,0), rgb(44,44,44));
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20vh;
 }
 
-.title-div {
+/* .title-div {
   display: flex;
   justify-content: center;
-}
+} */
 
 .title {
   margin: 0px;
-  color: rgb(237, 82, 82);
-  font-size: 60px;
+  color: rgb(253, 143, 0);
+  font-size: 40px;
   font-weight: bolder;
-  -webkit-text-stroke-width: medium;
-  -webkit-text-stroke-color: black;
-  padding-bottom: 10px;
+  /* -webkit-text-stroke-width: medium;
+  -webkit-text-stroke-color: black; */
+  /* padding-bottom: 10px; */
+  padding-left: 20px;
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  
+  /* justify-content: space-between; */
   padding: 2px 5px 0 5px;
   margin: 0;
 }
@@ -38,12 +45,15 @@
   text-decoration: none;
 }
 .fa-heart {
-  color: rgb(240, 142, 171);
+  color: rgb(107, 122, 156);
   font-size: 25px;
   padding: 8px;
 }
 .fa-home {
-  color: rgb(255, 235, 137);
+  color: rgb(107, 122, 156);
   font-size: 25px;
   padding: 8px;
+}
+.fa-film {
+  color: rgb(107, 122, 156);
 }
